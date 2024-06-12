@@ -1,0 +1,56 @@
+:root {
+  --base-color: hsla(0, 0%, 50%, 0.4);
+  --indicator-color: hsla(0, 0%, 50%, 0.8);
+}
+
+.wrapper {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  padding: 0;
+  width: fit-content;
+  height: fit-content;
+  display: block;
+  outline: none;
+  pointer-events: none;
+  user-select: none;
+  background-color: transparent;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.loader {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  border-radius: 50%;
+  border: 10px solid var(--base-color);
+  border-top: 10px solid var(--indicator-color);
+  animation:
+    spin 2s linear infinite,
+    fadeIn 1s ease forwards;
+  transform: translate(-50%, -50%);
+}
