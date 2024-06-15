@@ -1,8 +1,12 @@
 module.exports = {
   apps: [
     {
-      name: 'kupipodariday-backend',
-      script: 'dist/main.js',
+      name: 'backend',
+      script: './dist/main.js',
+      env: {
+        PORT: process.env.SERVER_PORT,
+        NODE_ENV: 'production',
+      },
     },
   ],
 };
