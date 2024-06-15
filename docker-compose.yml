@@ -1,4 +1,5 @@
 version: '3.9'
+
 services:
   backend:
     container_name: compose-backend
@@ -8,9 +9,11 @@ services:
     image: compose-backend
     restart: always
     ports:
-      - "4000:3000"
+      - 4000:3000
     env_file:
       - .env
+    networks:
+      - backend
 
   frontend:
     container_name: compose-frontend
@@ -20,17 +23,33 @@ services:
     image: compose-frontend
     restart: always
     ports:
-      - "8080:80"
+      - 8080:80
+    networks:
+      - frontend
 
   postgres:
     container_name: compose-postgres
     restart: always
     image: postgres
+    volumes:
+      - postgres_data:/data/postgres
     env_file:
       - .env
+    networks:
+      - backend
 
   adminer:
     container_name: adminer
     image: adminer
+    restart: always
     ports:
-      - "8081:8081"
+      - 8081:8080
+    networks:
+      - backend
+
+networks:
+  backend:
+  frontend:
+
+volumes:
+  postgres_data:
