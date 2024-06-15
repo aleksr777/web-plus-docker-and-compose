@@ -9,7 +9,7 @@ services:
     image: compose-backend
     restart: always
     ports:
-      - 4000:3000
+      - 4000:4000
     env_file:
       - .env
     networks:
@@ -23,7 +23,7 @@ services:
     image: compose-frontend
     restart: always
     ports:
-      - 8082:80
+      - 3000:80
     networks:
       - frontend
 
