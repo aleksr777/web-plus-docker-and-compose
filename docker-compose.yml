@@ -23,7 +23,7 @@ services:
     image: compose-frontend
     restart: always
     ports:
-      - 8080:80
+      - 8082:80
     networks:
       - frontend
 
