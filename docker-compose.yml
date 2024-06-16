@@ -27,6 +27,8 @@ services:
     restart: always
     ports:
       - 3000:80
+    environment:
+      - REACT_APP_API_URL=https://aleksr777.nomorepartiesco.ru:3001
     depends_on:
       - backend
     networks:

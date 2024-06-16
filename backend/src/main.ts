@@ -10,10 +10,9 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   const configService = app.get(ConfigService);
   const serverPort = configService.get<number>('SERVER_PORT');
-  const frontendUrl = configService.get<string>('FRONTEND_URL');
 
   app.enableCors({
-    origin: frontendUrl,
+    origin: ['https://aleksr777.nomorepartiesco.ru', 'http://localhost:3000'],
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
     credentials: true,
   });
