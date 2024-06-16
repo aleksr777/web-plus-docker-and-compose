@@ -13,7 +13,7 @@ services:
     env_file:
       - .env
     depends_on:
-      - postgres
+      - database
     networks:
       - backend
       - frontend
@@ -32,8 +32,8 @@ services:
     networks:
       - frontend
 
-  postgres:
-    container_name: compose-postgres
+  database:
+    container_name: compose-database
     image: postgres
     restart: always
     volumes:
@@ -49,6 +49,8 @@ services:
     restart: always
     ports:
       - 8081:8080
+    depends_on:
+      - database
     networks:
       - backend
 
