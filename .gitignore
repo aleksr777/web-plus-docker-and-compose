@@ -1,23 +1,21 @@
-# dependencies
-/node_modules
-/.pnp
-.pnp.js
+# Игнорирование .env файлов
+*.env
 
-# testing
-/coverage
+# Игнорирование node_modules папок
+node_modules/
 
-# production
-/build
-/dist
+# Игнорирование других временных файлов и директорий
+*.log
+*.tmp
+dist/
+build/
+coverage/
 
-# misc
+# Игнорирование операционных системных файлов
 .DS_Store
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+Thumbs.db
 
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+# Игнорирование редакторов и IDE файлов
+.vscode/
+.idea/
+*.swp
